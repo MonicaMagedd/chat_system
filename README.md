@@ -36,6 +36,32 @@ docker-compose up
 
 **Background Recurring Jobs:**
 - Using rufus-scheduler gem.
+## API Endpoints:
+  - **1- For Application:**
+  ```
+      GET   /applications/
+      GET   /applications/{access_token}
+      POST  /applications
+      PUT   /applications/{access_token}
+
+   ```
+- **2- For Chat:**
+  ```
+      GET   /applications/{access_token}/chats
+      GET   /applications/{access_token}/chats/{chat_number}
+      POST  /applications/{access_token}/chats/
+      PUT   /applications/{access_token}/chats/{chat_number}
+      DELETE /applications/{access_token}/chats/{chat_number}
+    ```
+  - **3- For Message:**
+    ```
+      GET   /applications/{access_token}/chats/{chat_number}/messages
+      GET   /applications/{access_token}/chats/{chat_number}/messages/{message_number}
+      GET   /applications/{access_token}/chats/{chat_number}/messages/search?text={text}
+      POST  /applications/{access_token}/chats/{chat_number}/messages - body of request {"body": {message_body}}
+      PUT   /applications/{access_token}/chats/{chat_number}/messages/{message_number}
+      DELETE   /applications/{access_token}/chats/{chat_number}/messages/{message_number}
+      GET   /applications/{access_token}/chats/{chat_number}/messages/{message_number}/{text}
 
 ## Challenges and suggested solutions:
 - **1- Chats and Messages Count:**
